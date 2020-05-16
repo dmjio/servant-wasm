@@ -17,6 +17,7 @@ import           Data.Proxy
 import           Network.Wai.Handler.Warp
 import           Servant.Server
 import           Servant.Server.StaticFiles
+import           Servant.WASM
 
 type API = "wasm" :> Get '[WASM] ByteString :<|> Raw
 
