@@ -1,6 +1,5 @@
-{-# LANGUAGE DerivingVia #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings     #-}
 -----------------------------------------------------------------------------
 -- |
 -- Module      :  Servant.WASM
@@ -20,9 +19,6 @@ import           Servant.API
 
 -- | 'WASM' Content Type
 data WASM
-
-data RawJSON
-  deriving Accept via JSON
 
 instance Accept WASM where
   contentType _ = "application/wasm"
