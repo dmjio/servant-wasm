@@ -19,14 +19,12 @@ import           Servant.Server
 import           Servant.Server.StaticFiles
 import           Servant.WASM
 
-type API = "wasm" :> Get '[WASM] ByteString :<|> Raw
+type API = "wasm" :> Get '[WASM] ByteString
 
 main :: IO ()
 main = do
   putStrLn "Running on 3000..."
-  run 3000 (serve (Proxy @ API) handlers)
-
-handlers = wasmHandler :<|> serveDirectoryFileServer "."
+  run 3000 (serve (Proxy @ API) wasmHandler)
 
 wasmHandler :: Handler ByteString
 wasmHandler = liftIO (B.readFile "hello.wasm")
