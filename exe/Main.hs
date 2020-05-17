@@ -1,15 +1,3 @@
-servant-wasm
-==========================
-[![Hackage](https://img.shields.io/hackage/v/servant-wasm.svg)](http://hackage.haskell.org/package/servant-wasm)
-[![Haskell Programming Language](https://img.shields.io/badge/language-Haskell-green.svg)](https://haskell.org)
-[![BSD3 LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/dmjio/servant-wasm/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/dmjio/servant-wasm.svg?branch=master)](https://travis-ci.org/dmjio/servant-wasm)
-
-Content-Type support for delivering WASM with [servant](https://github.com/haskell-servant/servant)
-
-### Usage
-
-```haskell
 {-# LANGUAGE DataKinds         #-}
 {-# LANGUAGE TypeOperators     #-}
 {-# LANGUAGE TypeApplications  #-}
@@ -34,4 +22,3 @@ main = do
 
 wasmHandler :: Handler ByteString
 wasmHandler = liftIO (B.readFile "hello.wasm")
-```
