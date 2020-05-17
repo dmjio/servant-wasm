@@ -35,3 +35,12 @@ main = do
 wasmHandler :: Handler ByteString
 wasmHandler = liftIO (B.readFile "hello.wasm")
 ```
+
+and corresponding JS to fetch WASM client-side.
+
+```js
+const importObject = {};
+WebAssembly.instantiateStreaming(fetch('/wasm'), importObject).then(results => {
+  // Do something with the results!
+});
+```
